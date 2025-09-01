@@ -18,3 +18,15 @@ make -j$(nproc)
 sudo apt install qemu-user
 qemu-aarch64 ./binary
 sudo make install
+
+
+
+# Run sample
+aarch64-linux-gnu-g++ add.cpp -I /usr/local/include/ -L ~/source/xbyak_aarch64/lib  -lxbyak_aarch64
+
+env QEMU_LD_PREFIX=/usr/aarch64-linux-gnu qemu-aarch64 ./a.out
+
+
+sudo apt update
+sudo apt install qemu-user
+env QEMU_LD_PREFIX=/usr/aarch64-linux-gnu qemu-aarch64 ./a.out
